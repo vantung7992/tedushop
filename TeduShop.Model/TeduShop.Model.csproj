@@ -52,9 +52,12 @@
     <Compile Include="Abstract\ISwitchable.cs" />
     <Compile Include="Abstract\Seoable.cs" />
     <Compile Include="Abstract\Switchable.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuGroups.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\MenuGroups.cs" />
     <Compile Include="Models\Footer.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Pages.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
