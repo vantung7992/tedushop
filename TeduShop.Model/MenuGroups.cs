@@ -8,6 +8,7 @@ namespace TeduShop.Model
     public class MenuGroups
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Required]
