@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TeduShop.Model
+namespace TeduShop.Model.Models
 {
     [Table("Menus")]
     public class Menu
@@ -23,7 +23,7 @@ namespace TeduShop.Model
         public int GroupID { get; set; }
 
         [ForeignKey("GroupID")]
-        public virtual MenuGroups MenuGroup { get; set; }
+        public virtual MenuGroup MenuGroup { get; set; }
 
         [MaxLength(10)]
         public string Target { get; set; }

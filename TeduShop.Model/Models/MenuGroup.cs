@@ -2,10 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TeduShop.Model
+namespace TeduShop.Model.Models
 {
     [Table("MenuGroups")]
-    public class MenuGroups
+    public class MenuGroup
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
