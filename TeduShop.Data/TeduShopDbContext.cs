@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
 using TeduShop.Model.Models;
+using System;
 
 namespace TeduShop.Data
 {
-    internal class TeduShopDbContext : DbContext
+    public  class TeduShopDbContext : DbContext
     {
         public TeduShopDbContext() : base("TeduShopConnection")
         {
@@ -27,6 +28,12 @@ namespace TeduShop.Data
         public DbSet<SystemConfig> SystemConfigs { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
+
+        public static TeduShopDbContext Create()
+        {
+            return new TeduShopDbContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
 
