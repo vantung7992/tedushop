@@ -140,7 +140,7 @@ namespace TeduShop.Data.Migrations
                 "dbo.PostCategeries",
                 c => new
                     {
-                        MyProperty = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 256),
                         Alias = c.String(nullable: false, maxLength: 256, unicode: false),
                         Description = c.String(maxLength: 500),
@@ -148,8 +148,15 @@ namespace TeduShop.Data.Migrations
                         DisplayOrder = c.Int(),
                         Image = c.String(maxLength: 256),
                         HomeaFlag = c.Boolean(),
+                        CreatedDate = c.DateTime(),
+                        CreatedBy = c.String(maxLength: 256),
+                        UpdateDate = c.DateTime(),
+                        UpdateBy = c.String(maxLength: 256),
+                        Status = c.Boolean(nullable: false),
+                        MetaKeywork = c.String(maxLength: 256),
+                        MetaDescription = c.String(maxLength: 256),
                     })
-                .PrimaryKey(t => t.MyProperty);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.Posts",
@@ -165,6 +172,13 @@ namespace TeduShop.Data.Migrations
                         HomeFlag = c.Boolean(),
                         HotFlag = c.Boolean(),
                         ViewCount = c.Int(),
+                        CreatedDate = c.DateTime(),
+                        CreatedBy = c.String(maxLength: 256),
+                        UpdateDate = c.DateTime(),
+                        UpdateBy = c.String(maxLength: 256),
+                        Status = c.Boolean(nullable: false),
+                        MetaKeywork = c.String(maxLength: 256),
+                        MetaDescription = c.String(maxLength: 256),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.PostCategeries", t => t.CategoryID, cascadeDelete: true)

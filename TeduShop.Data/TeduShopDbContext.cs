@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
 using TeduShop.Model.Models;
 using System;
-
 namespace TeduShop.Data
 {
     public  class TeduShopDbContext : DbContext

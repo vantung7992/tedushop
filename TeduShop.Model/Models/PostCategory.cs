@@ -10,7 +10,7 @@ namespace TeduShop.Model.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MyProperty { get; set; }
+        public int ID { get; set; }
 
         [Required]
         [MaxLength(256)]

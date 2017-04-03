@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TeduShop.Data.Infastructure
+﻿namespace TeduShop.Data.Infastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IDbFactory dbFactory;
         private TeduShopDbContext dbContext;
+
         public UnitOfWork(IDbFactory dbFactory)
         {
             this.dbFactory = dbFactory;
@@ -17,8 +12,9 @@ namespace TeduShop.Data.Infastructure
 
         public TeduShopDbContext DbContext
         {
-            get { return DbContext ?? (dbContext = dbFactory.Init()); }
+            get { return dbContext ?? (dbContext = dbFactory.Init()); }
         }
+
         public void Commit()
         {
             DbContext.SaveChanges();
