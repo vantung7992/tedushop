@@ -3,7 +3,7 @@ using TeduShop.Model.Models;
 using System;
 namespace TeduShop.Data
 {
-    public  class TeduShopDbContext : DbContext
+    public class TeduShopDbContext : DbContext
     {
         public TeduShopDbContext() : base("TeduShopConnection")
         {
@@ -27,6 +27,7 @@ namespace TeduShop.Data
         public DbSet<SystemConfig> SystemConfigs { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
+        public DbSet<Errors> Errors { get; set; }
 
         public static TeduShopDbContext Create()
         {
